@@ -1,0 +1,9 @@
+extension Unique<E, Id> on List<E> {
+  /// Make a set out of a list by defining unique list items.
+  List<E> unique([Id Function(E element)? id, bool inplace = true]) {
+    final ids = <dynamic>{};
+    var list = inplace ? this : List<E>.from(this);
+    list.retainWhere((x) => ids.add(id != null ? id(x) : x as Id));
+    return list;
+  }
+}
