@@ -66,6 +66,7 @@ class AboutPage extends ConsumerWidget {
                       if (!await launchUrl(
                         Uri.parse(
                             'https://github.com/dateiexplorer/bedtimer/issues'),
+                        mode: LaunchMode.externalApplication,
                       )) {
                         throw 'Could not launch url';
                       }
@@ -82,6 +83,7 @@ class AboutPage extends ConsumerWidget {
                     onPressed: () async {
                       if (!await launchUrl(
                         Uri.parse('https://github.com/dateiexplorer/bedtimer'),
+                        mode: LaunchMode.externalApplication,
                       )) {
                         throw 'Could not launch url';
                       }
